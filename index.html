@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANOCHELATE - OPSI 2026 Research Project</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-emerald-200">
+                    NC
+                </div>
+                <div>
+                    <span class="font-bold text-slate-900 tracking-tight text-lg">NANOCHELATE</span>
+                    <span class="block text-xs text-emerald-600 font-semibold">OPSI 2026 Submission</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#overview" class="hover:text-emerald-600 transition">Overview</a>
+                <a href="#video" class="hover:text-emerald-600 transition">Lab Video</a>
+                <a href="#characterization" class="hover:text-emerald-600 transition">Nano Metrics</a>
+                <a href="#in-vivo" class="hover:text-emerald-600 transition">In Vivo Data</a>
+                <a href="#histopathology" class="hover:text-emerald-600 transition">Histopathology</a>
+                <a href="#behavior" class="hover:text-emerald-600 transition">ToxTrac Behavior</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleModal('ec-modal')" class="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                    <span>Ethical Clearance</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative py-16 lg:py-24 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-emerald-100/80 text-emerald-800 border border-emerald-200 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span>Submitted Research Project – OPSI 2026 (MST & Health Sciences)</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Hard Candy Nanoencapsulation Combining <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Gnetum gnemon L.</span> Seed Extract & <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600">Chlorella vulgaris</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    A novel natural heavy metal chelator designed to prevent systemic lead ($\text{Pb}$) toxicity, reduce oxidative stress, and accelerate histopathological tissue recovery in oral delivery form.
+                </p>
+
+                <!-- Researchers Card -->
+                <div class="pt-4 flex flex-wrap justify-center gap-4 text-left">
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 min-w-[260px]">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                            SS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Sydney Cydia Salsabila</h4>
+                            <p class="text-xs text-emerald-600 font-semibold">Idea Creator & Lead Researcher</p>
+                            <p class="text-[11px] text-slate-400">MAN Insan Cendekia Serpong</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 min-w-[260px]">
+                        <div class="w-12 h-12 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold">
+                            FP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Fatikha Rizqina Eka Putri</h4>
+                            <p class="text-xs text-cyan-600 font-semibold">Idea Creator & Co-Researcher</p>
+                            <p class="text-[11px] text-slate-400">MAN Insan Cendekia Serpong</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advisor Info -->
+                <p class="text-xs text-slate-400 pt-2">
+                    Research Advisor: <strong class="text-slate-600">Susi Pawartiningtyas, S.Pd.</strong> | Institution: MAN Insan Cendekia Serpong, South Tangerang
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Video Section -->
+    <section id="video" class="py-12 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900">In Vivo Laboratory Documentation</h2>
+                <p class="text-sm text-slate-500 mt-1">Experimental execution at Animal House & Physiology Laboratory, Universitas Gadjah Mada</p>
+            </div>
+            
+            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative group">
+                <video controls class="w-full aspect-video object-cover" poster="">
+                    <source src="IMG_1116.MOV" type="video/mp4">
+                    <source src="IMG_1116.MOV" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="p-4 bg-slate-900 text-slate-300 text-xs flex justify-between items-center border-t border-slate-800">
+                    <span class="flex items-center space-x-2">
+                        <i data-lucide="video" class="w-4 h-4 text-emerald-400"></i>
+                        <span>Live Gavage Treatment & Body Weight Measurement (BALB/c Mice)</span>
+                    </span>
+                    <span class="text-slate-500">Official Report Appendix Video</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Nanoparticle Metrics -->
+    <section id="characterization" class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Nanoparticle Characterization</h2>
+                    <p class="text-sm text-slate-500 mt-1">Physicochemical validation via Dynamic Light Scattering (DLS) & Zeta Sizer</p>
+                </div>
+                <div class="mt-4 md:mt-0 text-xs font-semibold bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-slate-600">
+                    Tested at LPPT UGM & FKG UGM Labs
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                    <div class="text-xs text-slate-400 font-medium">Particle Size (DLS)</div>
+                    <div class="text-2xl font-extrabold text-slate-900 mt-2">198.22 <span class="text-sm font-normal text-slate-500">nm</span></div>
+                    <div class="text-[11px] text-emerald-600 font-semibold mt-1">SD: ±5.34 nm</div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                    <div class="text-xs text-slate-400 font-medium">Polydispersity Index</div>
+                    <div class="text-2xl font-extrabold text-slate-900 mt-2">0.128</div>
+                    <div class="text-[11px] text-emerald-600 font-semibold mt-1">Narrow distribution</div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                    <div class="text-xs text-slate-400 font-medium">Zeta Potential</div>
+                    <div class="text-2xl font-extrabold text-slate-900 mt-2">-15.2 <span class="text-sm font-normal text-slate-500">mV</span></div>
+                    <div class="text-[11px] text-cyan-600 font-semibold mt-1">Moderate stability</div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                    <div class="text-xs text-slate-400 font-medium">Encapsulation Eff.</div>
+                    <div class="text-2xl font-extrabold text-emerald-600 mt-2">95.88%</div>
+                    <div class="text-[11px] text-slate-400 mt-1">Resveratrol: 97.41%</div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                    <div class="text-xs text-slate-400 font-medium">Loading Capacity</div>
+                    <div class="text-2xl font-extrabold text-teal-600 mt-2">40.97%</div>
+                    <div class="text-[11px] text-slate-400 mt-1">High active payload</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In Vivo Biological Parameters -->
+    <section id="in-vivo" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <span class="text-xs font-bold text-emerald-600 tracking-wider uppercase">In Vivo Efficacy Study</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-1">Plasma Biomarker Analysis (Mus musculus)</h2>
+                <p class="text-sm text-slate-500">Evaluated across 6 treatment groups ($n=18$ male BALB/c mice) following 14-day $\text{Pb(NO}_3\text{)}_2$ induction</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- SOD Chart -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 lg:col-span-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">Superoxide Dismutase (SOD) Activity</h3>
+                            <p class="text-xs text-slate-500">Antioxidant enzyme response ($p = 0.002$ *Statistically Significant)</p>
+                        </div>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-bold">p = 0.002</span>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="sodChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Parameters Table -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-4">Biochemical Metrics Summary</h3>
+                        <div class="space-y-4 text-xs">
+                            <div class="p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="font-semibold text-slate-700">Creatinine (Kidney Function)</div>
+                                <div class="text-slate-500 mt-1">Range: 1.73 – 1.83 mg/dL ($p = 0.143$)</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="font-semibold text-slate-700">MDA (Lipid Peroxidation)</div>
+                                <div class="text-slate-500 mt-1">P1: 0.59 mM | P2: 2.48 mM | P3: 3.55 mM</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-slate-200">
+                                <div class="font-semibold text-slate-700">SGPT / ALT (Liver Function)</div>
+                                <div class="text-slate-500 mt-1">P1: 5.97 U/L | P2: 5.93 U/L | P3: 22.20 U/L</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-slate-400 mt-4 pt-3 border-t border-slate-200">
+                        Analysis conducted at Animal Physiology Lab, UGM.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Histopathology Section -->
+    <section id="histopathology" class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <span class="text-xs font-bold text-teal-600 tracking-wider uppercase">Histopathological Evaluation</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-1">Liver & Kidney Tissue Damage Scores</h2>
+                <p class="text-sm text-slate-500">HE Staining scoring (Scale 0–4: 0=Normal, 1=Very Mild, 2=Mild, 3=Moderate, 4=Severe)</p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                                <th class="p-4">Organ</th>
+                                <th class="p-4">Parameter</th>
+                                <th class="p-4 text-center">P1 (90 mg/kg)</th>
+                                <th class="p-4 text-center">P2 (135 mg/kg)</th>
+                                <th class="p-4 text-center bg-emerald-50 text-emerald-900">P3 (180 mg/kg)</th>
+                                <th class="p-4 text-center">K+ (EDTA)</th>
+                                <th class="p-4 text-center text-rose-600">K- (Pb Only)</th>
+                                <th class="p-4 text-center">N (Normal)</th>
+                                <th class="p-4 text-center">Kruskal-Wallis (p)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-600">
+                            <tr>
+                                <td rowspan="2" class="p-4 font-bold text-slate-900 bg-slate-50/50">Hepar (Liver)</td>
+                                <td class="p-4 font-medium">Necrosis</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center bg-emerald-50/50 font-bold text-emerald-700">1</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center font-bold text-rose-600">3</td>
+                                <td class="p-4 text-center">0</td>
+                                <td class="p-4 text-center font-semibold text-emerald-600">p = 0.011 *</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Hydropic Degeneration</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center bg-emerald-50/50 font-bold text-emerald-700">1</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center font-bold text-rose-600">3</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center font-semibold text-emerald-600">p = 0.030 *</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="p-4 font-bold text-slate-900 bg-slate-50/50">Renal (Kidney)</td>
+                                <td class="p-4 font-medium">Hemorrhage</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center bg-emerald-50/50 font-bold text-emerald-700">0</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center">0</td>
+                                <td class="p-4 text-center">0</td>
+                                <td class="p-4 text-center text-slate-400">p = 0.269</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium">Tubular Degeneration</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center">1</td>
+                                <td class="p-4 text-center bg-emerald-50/50 font-bold text-emerald-700">1</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center font-bold text-rose-600">3</td>
+                                <td class="p-4 text-center">2</td>
+                                <td class="p-4 text-center font-semibold text-emerald-600">p = 0.020 *</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-500">
+                    <strong class="text-slate-700">Conclusion:</strong> Group P3 (180 mg/kg NC-GGCV) achieved the lowest tissue damage scores, significantly outperforming conventional chelation (EDTA) in tubular regeneration and liver hydropic recovery.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ToxTrac Behavioral Measurement -->
+    <section id="behavior" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <span class="text-xs font-bold text-cyan-600 tracking-wider uppercase">Open Field Test Analytics</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-1">Locomotor & Thigmotaxis Behavioral Metrics</h2>
+                <p class="text-sm text-slate-500">Automated tracking via ToxTrac software during 5-minute open-field arena exploration</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-4">Mobility Rate (%) Across Groups</h3>
+                    <div class="h-64">
+                        <canvas id="mobilityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-4">Exploration Rate (%) Across Groups</h3>
+                    <div class="h-64">
+                        <canvas id="explorationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethical Clearance Modal -->
+    <div id="ec-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 relative">
+            <button onclick="toggleModal('ec-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base">Ethical Clearance Certificate</h3>
+                    <p class="text-xs text-slate-500">Universitas Gadjah Mada (LPPT UGM)</p>
+                </div>
+            </div>
+            <div class="space-y-3 text-xs text-slate-600 border-t border-b border-slate-100 py-4 my-2">
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Certificate No:</span>
+                    <span class="font-mono font-bold text-slate-800">00028/VII/UN1/LPPT/EC/2026</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Issue Date:</span>
+                    <span class="font-semibold text-slate-800">July 8, 2026</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Principal Investigator:</span>
+                    <span class="font-semibold text-slate-800">Sydney Cydia Salsabila</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Co-Investigator:</span>
+                    <span class="font-semibold text-slate-800">Fatikha Rizqina Eka Putri</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Institution:</span>
+                    <span class="font-semibold text-slate-800">MAN Insan Cendekia Serpong</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Chairperson:</span>
+                    <span class="font-semibold text-slate-800">Prof. Dr. drh. Siti Isrina Oktavia Salasia</span>
+                </div>
+            </div>
+            <div class="mt-4 text-right">
+                <button onclick="toggleModal('ec-modal')" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold hover:bg-slate-800 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs space-y-2">
+            <p class="text-slate-300 font-semibold">NANOCHELATE Research Team – MAN Insan Cendekia Serpong</p>
+            <p>Submitted to Olimpiade Penelitian Siswa Indonesia (OPSI 2026) | Kemendikbudristek</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for Charts & Interactivity -->
+    <script>
+        lucide.createIcons();
+
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.toggle('hidden');
+        }
+
+        // SOD Chart
+        const ctxSod = document.getElementById('sodChart').getContext('2d');
+        new Chart(ctxSod, {
+            type: 'bar',
+            data: {
+                labels: ['P1 (90mg)', 'P2 (135mg)', 'P3 (180mg)', 'K+ (EDTA)', 'K- (Pb)', 'N (Normal)'],
+                datasets: [{
+                    label: 'SOD Activity (U/mL)',
+                    data: [6.24, 2.67, 2.36, 4.92, 5.55, 2.52],
+                    backgroundColor: ['#10b981', '#14b8a6', '#06b6d4', '#64748b', '#ef4444', '#94a3b8'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'U/mL' } } }
+            }
+        });
+
+        // Mobility Chart
+        const ctxMob = document.getElementById('mobilityChart').getContext('2d');
+        new Chart(ctxMob, {
+            type: 'line',
+            data: {
+                labels: ['P1', 'P2', 'P3', 'K+', 'K-', 'N'],
+                datasets: [{
+                    label: 'Mobility Rate (%)',
+                    data: [52.04, 66.48, 96.78, 53.37, 94.43, 75.82],
+                    borderColor: '#06b6d4',
+                    backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // Exploration Chart
+        const ctxExp = document.getElementById('explorationChart').getContext('2d');
+        new Chart(ctxExp, {
+            type: 'bar',
+            data: {
+                labels: ['P1', 'P2', 'P3', 'K+', 'K-', 'N'],
+                datasets: [{
+                    label: 'Exploration Rate (%)',
+                    data: [60.00, 61.11, 77.78, 64.00, 84.00, 80.00],
+                    backgroundColor: '#10b981',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>
